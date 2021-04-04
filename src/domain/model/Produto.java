@@ -2,15 +2,14 @@ package domain.model;
 
 import domain.TipoProduto;
 
-public abstract class Produto {
-    protected Integer codigo;
-    protected String nome;
-    protected Integer unidade;
-    protected Double valor;
+public class Produto {
 
-    public abstract TipoProduto getCategoria();
+    private Integer codigo;
+    private String nome;
+    private Integer unidade;
+    private Double valor;
 
     @Override public String toString() {
-        return getCategoria().toString();
+        return tipo.toString();
     }
 }

@@ -6,5 +6,4 @@ public interface Estoque {
     //medicamento, alimentação, informatica, cosmeticos
     void listar();
     double total();
-    void add(Produto prod);
 }
