@@ -6,7 +6,7 @@ import domain.model.Produto;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.Optional;
 
 // Implementa os métodos definidos na interface "Estoque"
 // Essa classe gerência o estoque de produtos alimenticios
@@ -23,9 +23,9 @@ public class EstoqueAlimento implements Estoque {
     }
     //Lista os produtos que já estão vencidos
     public void listarVencidos(){
-        System.out.println("Produtos vencidos: ");
         listaAlimentos.stream()
-                .filter(p -> p.getVencimento().isBefore(LocalDateTime.now()))
+                .filter(alimento -> alimento.getVencimento() != null)
+                .filter(alimento -> alimento.getVencimento().isAfter(LocalDateTime.now()))
                 .forEach(System.out::println);
     }
 
@@ -46,18 +46,19 @@ public class EstoqueAlimento implements Estoque {
         System.out.println("O valor total: " + total);
     }
     //Adiciona um novo produto
-    @Override public void add(Produto ali) {
+    @Override public void adicionar(Produto ali) {
         //Só adiciona os produtos que são do tipo Alimento
-        if (ali instanceof Alimento) this.listaAlimentos.add((Alimento) ali);
+        if (ali instanceof Alimento) this.listaAlimentos.add((Alimento)ali);
     }
 
     //Adiciona varios produtos
-    @Override public void addAll(List<Produto> produtos) {
-        produtos.forEach(this::add); //Usa o metodo "add" da classe
+    @Override public void adicionarTodos(List<Produto> produtos) {
+        produtos.forEach(this::adicionar); //Usa o metodo "add" da classe
     }
 
-    @Override public void remove(int codProduto) {
+    @Override public void remover(int codProduto) {
         this.listaAlimentos.removeIf(alimento -> alimento.getCodigo().equals(codProduto));
+        System.out.println("Produto de código " + codProduto + " removido");
     }
 
 }

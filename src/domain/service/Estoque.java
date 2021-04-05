@@ -7,17 +7,13 @@ import java.util.List;
 public interface Estoque {
     // Lista todos os produtos dentro do estoque
     void listar();
-
     // Retorna o valor total de todos os produtos
     void valorTotal();
-
     // Adiciona um novo produto ao estoque
-    void add(Produto produto);
-
+    void adicionar(Produto produto);
     // Adiciona vários produtos ao estoque
-    void addAll(List<Produto> produtos);
-
+    void adicionarTodos(List<Produto> produtos);
     // Remove um produto
-    void remove(int codProduto);
+    void remover(int codProduto);
 
 }

@@ -22,15 +22,16 @@ public class EstoqueCosmetico implements Estoque {
         System.out.println("O valor total: " + total);
     }
 
-    @Override public void add(Produto prod) {
+    @Override public void adicionar(Produto prod) {
         if (prod instanceof Cosmetico) this.listaCosmeticos.add((Cosmetico)prod);
     }
 
-    @Override public void addAll(List<Produto> produtos) {
-        produtos.forEach(this::add);
+    @Override public void adicionarTodos(List<Produto> produtos) {
+        produtos.forEach(this::adicionar);
     }
 
-    @Override public void remove(int codProduto) {
+    @Override public void remover(int codProduto) {
         this.listaCosmeticos.removeIf(alimento -> alimento.getCodigo().equals(codProduto));
+        System.out.println("Produto de código " + codProduto + " removido");
     }
 }

@@ -1,5 +1,4 @@
 package domain.service;
-import domain.model.Alimento;
 import domain.model.Informatica;
 import domain.model.Produto;
 
@@ -12,6 +11,14 @@ public class EstoqueInformatica implements Estoque {
     List<Informatica> listaInformaticos = new ArrayList<>();
 
 
+    //Lista apenas os produtos informaticos de uma determinda marca
+    public void listarMarca(String marca){
+        System.out.println("Listando informaticos da marca: " + marca);
+        listaInformaticos.stream()
+                .filter(p -> marca.equalsIgnoreCase(p.getMarca()))
+                .forEach(System.out::println);
+    }
+
     @Override public void listar() {
         listaInformaticos.forEach(System.out::println);
     }
@@ -23,15 +30,18 @@ public class EstoqueInformatica implements Estoque {
         System.out.println("O valor total: " + total);
     }
 
-    @Override public void add(Produto prod) {
-        if (prod instanceof Informatica) this.listaInformaticos.add((Informatica)prod);
+    @Override public void adicionar(Produto prod) {
+        if (prod instanceof Informatica) {
+            this.listaInformaticos.add((Informatica) prod);
+        }
     }
 
-    @Override public void addAll(List<Produto> produtos) {
-        produtos.forEach(this::add);
+    @Override public void adicionarTodos(List<Produto> produtos) {
+        produtos.forEach(this::adicionar);
     }
 
-    @Override public void remove(int codProduto) {
+    @Override public void remover(int codProduto) {
         this.listaInformaticos.removeIf(alimento -> alimento.getCodigo().equals(codProduto));
+        System.out.println("Produto de código " + codProduto + " removido");
     }
 }

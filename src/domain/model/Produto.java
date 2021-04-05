@@ -2,12 +2,13 @@ package domain.model;
 
 //Representa os atributos e metodos básicos de qualquer produto
 public abstract class Produto {
-    protected Integer codigo;
+    protected int codigo;
     protected String nome;
-    protected Integer unidade;
-    protected Double valor;
+    protected int unidade = 0;
+    protected double valor = 0.0;
 
-    public Produto(Integer codigo,String nome, Integer unidade, Double valor ) {
+    public Produto(){}
+    public Produto(int codigo,String nome, int unidade, double valor ) {
         this.codigo = codigo;
         this.nome = nome;
         this.unidade = unidade;
