@@ -14,7 +14,7 @@ import java.util.List;
 
 public class Main {
     public static List<Produto> listaProdutos(){
-        /* Uma lista gênericas de produtos.
+        /* Uma lista gênerica de produtos.
          ** Todos esse produtos possuem a mesma superclasse (Produto)
          ** No entanto, observe que não são do mesmo tipo de objeto */
         return Arrays.asList(

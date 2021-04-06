@@ -23,9 +23,10 @@ public class EstoqueAlimento implements Estoque {
     }
     //Lista os produtos que já estão vencidos
     public void listarVencidos(){
+        System.out.println("Listando produtos vencidos: ");
         listaAlimentos.stream()
                 .filter(alimento -> alimento.getVencimento() != null)
-                .filter(alimento -> alimento.getVencimento().isAfter(LocalDateTime.now()))
+                .filter(alimento -> alimento.getVencimento().isBefore(LocalDateTime.now()))
                 .forEach(System.out::println);
     }
 
