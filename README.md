@@ -20,7 +20,7 @@ dentro de si um método capaz de gerar objetos atráves de alguma lógica.
    implementam a _interface_ `Produto`.
 
 ### `Benefícios`
+> * Fácilita a instânciação de objetos.
 > * O código fica mais flexivel.
 > * Torna a classe que usa o objeto indepêndente, 
   pois agora ela não precisará saber como o objeto foi criado.
->* Fácilita a criação de objetos.

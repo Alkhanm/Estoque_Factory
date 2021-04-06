@@ -27,6 +27,9 @@ public abstract class Produto {
     public Double getValor() {
         return valor;
     }
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
     @Override public String toString() {
         return " Codigo: " + codigo + ", Nome: " + nome + ", unidade: " + unidade + ", valor: " + valor;

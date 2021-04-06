@@ -24,15 +24,6 @@ public class Factory {
             case INFORMATICA -> new Informatica();
         };
     }
-    //FACTORY METHOD - Produto 2: Realiza o mesmo que o anterior, mas usando a sobrecarga de método para aceitar parâmtros
-    //que serão repassados para os objetos
-    public static Produto getProduto(TipoNegocio tipo, int codigo, String nome, int unidade, double valor){
-        return switch(tipo) {
-            case ALIMENTO -> new Alimento(codigo,nome, unidade, valor);
-            case COSMETICO -> new Cosmetico(codigo,nome, unidade, valor);
-            case INFORMATICA -> new Informatica(codigo,nome, unidade, valor);
-        };
-    }
 }
 
 

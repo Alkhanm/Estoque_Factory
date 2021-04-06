@@ -4,18 +4,19 @@ import domain.model.Produto;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 // Implementa os métodos definidos na interface "Estoque"
 // Essa classe gerência o estoque de produtos de informatica
 public class EstoqueInformatica implements Estoque {
     List<Informatica> listaInformaticos = new ArrayList<>();
 
-
     //Lista apenas os produtos informaticos de uma determinda marca
-    public void listarMarca(String marca){
+    public void filtrarMarca(String marca){
         System.out.println("Listando informaticos da marca: " + marca);
         listaInformaticos.stream()
                 .filter(p -> marca.equalsIgnoreCase(p.getMarca()))
+                .peek(p -> p.setNome(p.getNome().toUpperCase()))
                 .forEach(System.out::println);
     }
 
