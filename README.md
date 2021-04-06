@@ -1,5 +1,8 @@
+>####Alunos:
+>* Joás Sousa Andrade
+>* Luana Carvalho
+>* Lucas Gomes
 # Factory Method
-
 ### `Definição`
 Esse padrão pode ser definido como uma classe ou função que possui 
 dentro de si um método capaz de gerar objetos atráves de alguma lógica.
