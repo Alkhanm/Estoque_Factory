@@ -19,7 +19,7 @@ public class EstoqueCosmetico implements Estoque {
         double total = listaCosmeticos.stream()
                 .map((v) -> v.getUnidade() * v.getValor())
                 .reduce(0.0, Double::sum);
-        System.out.println("O valor total: " + total);
+        System.out.println("O valor total: R$ " + total);
     }
 
     @Override public void adicionar(Produto prod) {

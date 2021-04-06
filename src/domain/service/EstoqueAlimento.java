@@ -43,7 +43,7 @@ public class EstoqueAlimento implements Estoque {
        double total = listaAlimentos.stream()
                .map((v) -> v.getUnidade() * v.getValor())
                .reduce(0.0, Double::sum);
-        System.out.println("O valor total: " + total);
+        System.out.println("O valor total: R$ " + total);
     }
     //Adiciona um novo produto
     @Override public void adicionar(Produto ali) {

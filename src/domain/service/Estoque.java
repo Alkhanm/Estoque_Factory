@@ -15,5 +15,4 @@ public interface Estoque {
     void adicionarTodos(List<Produto> produtos);
     // Remove um produto
     void remover(int codProduto);
-
 }
