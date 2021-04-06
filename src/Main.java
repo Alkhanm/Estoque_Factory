@@ -15,6 +15,7 @@ public class Main {
         ** Todos esse produtos possuem a mesma superclasse (Produto)
         ** No entanto, observe que não são do mesmo tipo de objeto */
         //                          L I S T A    D E    P R O D U T O S
+        /* A lista receberá varios produtos de implementações diferentes criados através de uma fabrica */
         List<Produto> produtos = new ArrayList<>(Arrays.asList(
                 //Cosmeticos
                 Factory.getProduto(TipoNegocio.COSMETICO, 1, "Shampoo", 2, 25.0),
@@ -49,6 +50,7 @@ public class Main {
         estoque.listar();
         estoque.valorTotal();
         //Metódos proprios do "EstoqueAlimentos"
+        //Realiza um "cast" no estoque gênerico para que ele possa acessar os metódos especificos da implementação "EstoqueAlimentp"
         ((EstoqueAlimento)estoque).getPesoTotalAlimentos();
         ((EstoqueAlimento)estoque).listarVencidos();
 
